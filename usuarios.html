@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html>
+  <head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="robots" content="index">
+    <!-- <meta name="description" content="Descripcion de la pagina"> -->
+
+    <title>Dashboard</title>
+
+    <!-- <link rel="icon" type="image/png" sizes="16x16" href="">  -->
+
+    <!-- Estilos -->
+    <link rel="stylesheet" href="Assets/Plugins/Bootstrap/bootstrap.css"  >
+    <link rel="stylesheet" href="Assets/Plugins/Fontawesome/css/all.css"  >
+    <link rel="stylesheet" href="Assets/Plugins/Datatables/main.css"      >
+    <link rel="stylesheet" href="Assets/Dashboard/Diseno/Layout/main.css" >
+    <!-- Scripts -->
+    <script type="text/javascript" src="Assets/Plugins/Jquery/Jquery.js"                          ></script>
+    <script type="text/javascript" src="Assets/Plugins/Bootstrap/bootstrap.js"                    ></script>
+    <script type="text/javascript" src="Assets/Plugins/Datatables/jquery.dataTables.min.js"       ></script>
+    <script type="text/javascript" src="Assets/Plugins/Datatables/dataTables.uikit.min.js"        ></script>
+    <script type="text/javascript" src="Assets/Plugins/SweetAlert/sweetAlert.js"                  ></script>
+    <script type="text/javascript" src="Assets/Plugins/JqueryValidation/JqueryValidate.js"        ></script>
+    <!-- Classes -->
+    <!-- <script type="text/javascript" src="Assets/Clases/Petciones_fetch.js"        ></script> -->
+    <!-- <script type="text/javascript" src="Assets/Clases/Datatable_personalizada.js"></script> -->
+    <!-- <script type="text/javascript" src="Assets/Clases/Alertas.js"                ></script> -->
+    <script type="text/javascript" src="Assets/Clases/Validador.js"              ></script>
+  </head>
+  <body>
+
+    <aside id="left-panel" class="left-panel">
+        <nav class="navbar navbar-expand-sm navbar-default">
+
+          <div class="navbar-header">
+
+              <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#main-menu" aria-controls="main-menu" aria-expanded="false" aria-label="Toggle navigation">
+                  <i class="fa fa-bars"></i>
+              </button>
+
+              <a class="navbar-brand" href="./"       ><img src="images/logo.png"></a>
+              <a class="navbar-brand hidden" href="./"><img src="images/logo2.png"></a>
+          </div>
+
+
+            <div id="main-menu" class="main-menu collapse navbar-collapse">
+                <ul class="nav navbar-nav">
+
+                  <li class="active">
+                      <a href="usuarios.html">  <i class="menu-icon fas fa-users"></i> Usuarios </a>
+                  </li>
+
+                </ul>
+            </div>
+
+        </nav>
+    </aside>
+
+    <div id="right-panel" class="right-panel">
+
+      <header id="header" class="header">
+
+          <div class="header-menu">
+
+            <div class="col-sm-7">
+                <a id="menuToggle" class="menutoggle float-left"><i class="far fa-hand-point-left"></i></a>
+            </div>
+
+            <div class="col-sm-5 float-right">
+                <div class="user-area">
+                    <a href="#" id="seccion_usuario">
+                      <img class="user-avatar rounded-circle" src="https://upload.wikimedia.org/wikipedia/commons/7/7c/User_font_awesome.svg">
+                    </a>
+                    <ul>
+                      <li>
+                        <i class="fas fa-user-cog "></i>
+                        <a href="#">Mí perfil</a>
+                      </li>
+                      <li>
+                        <i class="fas fa-power-off color-rojo"></i>
+                        <a href="#">Cerrar sesión</a>
+                      </li>
+                    </ul>
+                </div>
+            </div>
+
+
+          </div>
+
+      </header>
+
+      <div class="breadcrumbs">
+          <div class="col-sm-8">
+              <div class="page-header float-left">
+                  <div class="page-title">
+                      <ol class="breadcrumb text-right">
+                          <li class="active"><a href="#">Inicio</a></li>
+                          <li class="active">Usuarios</li>
+                          <div class="icon-container">
+                            <a data-toggle="modal" data-target="#modal-agregar">
+                                <span class="fas fa-plus"></span>
+                            </a>
+                          </div>
+                      </ol>
+                  </div>
+              </div>
+          </div>
+      </div>
+
+      <section>
+        <div class="content mt-3">
+            <div class="card">
+                <div class="card-body">
+                    <div class="table-responsive contant">
+                        <table id="datataTable" class="uk-table uk-table-hover uk-table-striped data_table" style="width:100%;">
+                            <thead>
+                                <tr>
+                                  <th> ID                    </th>
+                                  <th> Nombre                </th>
+                                  <th> Correo electrónico    </th>
+                                  <th> Opciones              </th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                              
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="modal fade" id="modal-agregar" tabindex="-1" role="dialog">
+          <div class="modal-dialog" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <div class="modal-title">
+                  Agregar usuario <span> </span>
+                </div>
+                <div class="modal-close" data-dismiss="modal">
+                  <a class='dt-btn-azul n-btn-1' aria-label="Close">
+                      <i class="fas fa-times color-rojo"></i>
+                  </a>
+                </div>
+              </div>
+
+              <div class="modal-body">
+                <form id="form_agregar" class="formulario">
+
+                  <div class="row mt-3">
+                    <div class="centrar_input">
+                      <div class="grupo-de-forms texto-animado-de-forms">
+                          <input type="text" class="texto-de-forms" name="nombre" required>
+                          <span class="barra"></span>
+                          <label> <i class="fas fa-align-justify"></i> Nombre completo</label>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="row">
+                    <div class="col">
+                      <div class="grupo-de-forms texto-animado-de-forms">
+                          <input type="email" class="texto-de-forms" name="email" required>
+                          <span class="barra"></span>
+                          <label> <i class="fas fa-envelope"></i> Email</label>
+                      </div>
+                    </div>
+
+                    <div class="col">
+                      <div class="grupo-de-forms texto-animado-de-forms">
+                          <input type="password" class="texto-de-forms" name="password" required>
+                          <span class="barra"></span>
+                          <label> <i class="fas fa-key"></i> Contraseña</label>
+                      </div>
+                    </div>
+                  </div>
+
+                </form>
+              </div>
+
+              <div class="modal-footer">
+                <button type="button" data-dismiss="modal">CANCELAR</button>
+                <button type="submit" class="boton-modal fondo-verde color-blanco">AGREGAR</button>
+              </div>
+
+            </div>
+          </div>
+        </div>
+
+
+      </section>
+
+    </div>
+
+    <script type="text/javascript" src="Assets/Dashboard/Diseno/Layout/main.js"    ></script>
+    <script type="text/javascript" src="Assets/Dashboard/Vistas/Usuarios/general.js"    ></script>
+  </body>
+</html>
