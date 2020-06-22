@@ -1,0 +1,61 @@
+@import '../Imports/colores'
+
+$margen_estandar: 40px
+
+.datatable_row_red
+  background-color: $color-primario
+
+.datatable_row_yellow
+  background-color: $color-amarillo-claro
+
+#datatable > tbody > tr > td:last-child
+  position: relative
+  a > i[class^="fas fa-"],
+  a > i[class*=" fa"]
+    position: absolute
+    -webkit-transition: 0.3s
+    transition: 0.3s
+    color: $color-gris
+    margin-top: 5px
+  a
+    i:hover
+      font-size: 2.2em
+      margin-top: -5px
+  .dt-btn-editar > i:hover
+    color: $color-azul
+  .dt-btn-habilitar
+    i:hover
+      color: $color-verde
+    margin-left: $margen_estandar
+  .dt-btn-asignar
+    i:hover
+      color: $color-verde
+    margin-left: $margen_estandar
+  .dt-btn-mostrar
+    i:hover
+      color: $color-amarillo
+    margin-left: $margen_estandar
+  .dt-btn-deshabilitar
+    i:hover
+      color: $color-rojo
+    margin-left: $margen_estandar
+  .dt-btn-galeria
+    i
+      margin-top: 0px !important
+      &:hover
+        margin-top: -8px !important
+        color: $color-verde
+    margin-left: $margen_estandar
+
+
+.datatable-imagen
+  width: 50px
+  height: 50px
+
+.mt_menos_2
+  margin-top: 0px !important
+  &:hover
+    margin-top: -10px !important
+
+.hidden
+  display: none !important

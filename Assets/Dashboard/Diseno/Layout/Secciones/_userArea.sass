@@ -1,0 +1,59 @@
+@import '../Imports/colores'
+
+.user-area
+  padding: 5px 0
+  float: right
+  padding-right: 0
+  position: relative
+  .user-avatar
+    float: right
+    width: 32px
+  #seccion_usuario:focus + ul 
+    display: flex
+    opacity: 1
+    pointer-events: all
+    transform: translateY(0px)
+  ul:before
+    content: ""
+    position: absolute
+    top: -19px
+    left: 90%
+    transform: translateX(-50%)
+    border-top: 10px solid transparent
+    border-bottom: 10px solid $color-negro-plataforma
+    border-left: 10px solid transparent
+    border-right: 10px solid transparent
+  ul
+    margin-top: 50px
+    position: absolute
+    display: none
+    justify-content: left
+    flex-direction: column
+    align-items: left
+    width: 200px
+    height: 80px
+    background: $color-negro-plataforma
+    left: -165px
+    list-style: none
+    border-radius: 5px
+    opacity: 0
+    transform: translateY(-10px)
+    transition: all 0.4s ease
+    z-index: 999
+    li
+      cursor: pointer
+      width: 100% !important
+      height: 100%
+      display: flex
+      justify-content: left !important
+      align-items: center
+      z-index: -1
+      &:hover
+        a,
+        i
+          color: $color-secundario
+      i
+        width: 20%
+        float: left
+        margin-left: -10px
+        color: $color-blanco

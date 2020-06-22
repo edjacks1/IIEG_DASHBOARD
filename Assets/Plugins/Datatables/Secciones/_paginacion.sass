@@ -1,0 +1,47 @@
+ul[id="dataTable_paginador"]
+    display: inline-block
+    padding: 0
+    margin: 0
+    width: 100%
+    margin-bottom: 30px
+
+
+ul[id="dataTable_paginador"]>li
+    display: inline
+
+
+ul[id="dataTable_paginador"]>li>*
+    color: #e74c3c
+    padding: 8px 16px
+    text-decoration: none
+    transition:.3s
+    border: 1px solid #ddd
+    margin: 0 4px
+
+
+@media screen and (max-width: 500px)
+  ul[id="dataTable_paginador"]>li>*
+      padding: 3px 6px
+      transition:.3s
+      border: 1px solid #ddd
+      margin: 1 4px
+
+
+ul[id="dataTable_paginador"]>li > * > span > i
+  color: #e74c3c
+  vertical-align: middle
+
+
+ul[id="dataTable_paginador"]>li > * > span > .btn-atras
+  margin-right: 10px
+ul[id="dataTable_paginador"]>li > * > span > .btn-adelante
+  margin-left: 10px
+
+ul[id="dataTable_paginador"]>li.uk-active > *
+    background-color: #e74c3c
+    color: white
+    border: 1px solid #e74c3c
+
+
+ul[id="dataTable_paginador"]>li:hover:not(.uk-active) > *
+  background-color: #ffd

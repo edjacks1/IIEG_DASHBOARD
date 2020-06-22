@@ -1,0 +1,39 @@
+//Variables
+%botones-hover
+  font-size: 2.2em
+  top: 20% !important
+  transition: 0.3s
+
+//Codigo
+.data_table > tbody > tr > td:last-child
+  position: relative
+
+.data_table > tbody > tr > td:last-child > a [class^="fas fa-"],
+.data_table > tbody > tr > td:last-child > a [class*=" fa-"]
+  position: absolute
+  top: 35%
+  transition: 0.3s
+  color: #808b96
+  font-size: 1.2em
+
+.data_table > tbody > tr > td:last-child > .dt-btn-azul:hover [class^="fas fa-"],
+.data_table > tbody > tr > td:last-child > .dt-btn-azul:hover [class*=" fa-"]
+  @extend %botones-hover
+  color: #428bca
+
+.n-btn
+  margin-left: 30px
+
+.data_table > tbody > tr > td
+  vertical-align: middle !important
+
+
+@media screen and (max-width: 575px)
+  %botones-hover
+    font-size: 2.2em
+    top: 25% !important
+    transition: 0.3s
+
+  .data_table > tbody > tr > td:last-child > a [class^="fas fa-"],
+  .data_table > tbody > tr > td:last-child > a [class*=" fa-"]
+    top: 40%
